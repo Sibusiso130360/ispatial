@@ -95,11 +95,11 @@
                         AI-powered geospatial solutions that help businesses make smarter, data-driven decisions.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-md text-lg font-semibold transition duration-300">
-                            Get Started
+                        <button onclick="openModal()" class="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-md text-lg font-semibold transition duration-300">
+                          Get Started
                         </button>
-                        <button class="border-2 border-white text-white hover:bg-white hover:bg-opacity-10 px-6 py-3 rounded-md text-lg font-semibold transition duration-300">
-                            Learn More
+                        <button onclick="openModal()" class="border-2 border-white text-white hover:bg-white hover:bg-opacity-10 px-6 py-3 rounded-md text-lg font-semibold transition duration-300">
+                          Learn More
                         </button>
                     </div>
                 </div>
@@ -820,4 +820,34 @@
                 contactForm.reset();
             });
         }
+        // Modal control
+        function openModal() {
+          document.getElementById('actionModal').classList.remove('hidden');
+        }
+        function closeModal() {
+          document.getElementById('actionModal').classList.add('hidden');
+        }
     </script>
+    </script>
+
+    <!-- Modal -->
+    <div id="actionModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-lg relative">
+        <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+          <i class="fas fa-times"></i>
+        </button>
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">How can we help you?</h3>
+        <p class="text-gray-600 mb-6">Choose an option to proceed:</p>
+        <div class="flex flex-col gap-4">
+          <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-md text-center font-medium hover:bg-blue-700 transition duration-300">
+            Define Your Scope
+          </a>
+          <a href="#contact" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-md text-center font-medium hover:bg-blue-50 transition duration-300">
+            Request a Quote
+          </a>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
